@@ -1,8 +1,9 @@
 'use strict';
 
-import React, {
-  PropTypes,
-} from 'react';
+import createReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
+import React from 'react';
+import cloneReferencedElement from 'react-clone-referenced-element';
 import {
   ScrollView,
   StyleSheet,
@@ -11,13 +12,11 @@ import {
 } from 'react-native';
 import ScrollableMixin from 'react-native-scrollable-mixin';
 
-import cloneReferencedElement from 'react-clone-referenced-element';
-
 type DefaultProps = {
   renderScrollComponent: (props: Object) => ReactElement;
 };
 
-let InvertibleScrollView = React.createClass({
+let InvertibleScrollView = createReactClass({
   mixins: [ScrollableMixin],
 
   propTypes: {
